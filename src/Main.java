@@ -1,5 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Integer x = Integer.valueOf(228);
+        x = x + Integer.valueOf(888);
+        System.out.println(x);
+
     }
 }

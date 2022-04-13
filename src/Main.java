@@ -1,7 +1,12 @@
+import Controller.CollectionManager;
+import Controller.CommandManager;
+
+import java.io.IOException;
+import java.util.logging.*;
+
 public class Main {
-    public static void main(String[] args) {
-        Integer a = Integer.valueOf(228);
-        a = a + Integer.valueOf(888);
-        System.out.println(a);
+    public static void main(String[] args) throws IOException {
+        CommandManager commandmanager  = new CommandManager(new CollectionManager());
+        commandmanager.run();
     }
 }

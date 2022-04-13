@@ -2,6 +2,9 @@ package Data;
 
 import java.util.Date;
 
+/**
+ * The type Person.
+ */
 public class Person implements Comparable<Person> {
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -13,6 +16,17 @@ public class Person implements Comparable<Person> {
     private Country nationality; //Поле не может быть null
     private Location location; //Поле не может быть null
 
+    /**
+     * Instantiates a new Person.
+     *
+     * @param id          the id
+     * @param name        the name
+     * @param coordinates the coordinates
+     * @param height      the height
+     * @param hairColor   the hair color
+     * @param nationality the nationality
+     * @param location    the location
+     */
     public Person(int id, String name, Coordinates coordinates, Integer height, Color hairColor, Country nationality, Location location) {
         this.id = id;
         this.name = name;
@@ -72,14 +86,14 @@ public class Person implements Comparable<Person> {
     /**
      * Gets hair color.
      *
-     * @return color
+     * @return color hair color
      */
     public Color getHairColor() { return hairColor; }
 
     /**
      * Gets country.
      *
-     * @return country
+     * @return country country
      */
     public Country getCountry() {
         return nationality;
@@ -88,7 +102,7 @@ public class Person implements Comparable<Person> {
     /**
      * Gets location.
      *
-     * @return Location
+     * @return Location location
      */
     public Location getLocation() { return location; }
 
@@ -132,7 +146,7 @@ public class Person implements Comparable<Person> {
     /**
      * Sets Country.
      *
-     * @param Country Country
+     * @param nationality the nationality
      */
     public void setType(Country nationality) {
         this.nationality = nationality;

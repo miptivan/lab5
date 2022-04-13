@@ -8,7 +8,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * The type Ask manager.
+ */
 public class AskManager implements IAskManager {
+    /**
+     * The Reader.
+     */
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     @Override
@@ -95,27 +101,23 @@ public class AskManager implements IAskManager {
         try {
             System.out.print("Enter height: ");
             strHeight = reader.readLine().trim();
-            if (strHeight.equals("")) throw new NotEmptyException();
-            if (Integer.parseInt(strHeight) <= 0) throw new IncorrectValueException();
             height = Integer.parseInt(strHeight);
         }
-        catch (NotEmptyException e){
-            System.out.println(e.getMessage());
-            return askHeight();
-        }
         catch (NumberFormatException e){
-            System.out.println("Incorrect value format");
-            return askHeight();
+            height = null;
         }
-        catch (IncorrectValueException e){
-            System.out.println("Value must be more than zero");
-            return askHeight();
-        } catch (IOException e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
         return height;
     }
 
+    /**
+     * Ask color color.
+     *
+     * @return the color
+     * @throws IOException the io exception
+     */
     public Color askColor() throws IOException {
         Color color;
         String strColor;
@@ -136,6 +138,12 @@ public class AskManager implements IAskManager {
         return color;
     }
 
+    /**
+     * Ask country country.
+     *
+     * @return the country
+     * @throws IOException the io exception
+     */
     public Country askCountry() throws IOException {
         Country country;
         String strCountry;
@@ -156,6 +164,11 @@ public class AskManager implements IAskManager {
         return country;
     }
 
+    /**
+     * Ask location location.
+     *
+     * @return the location
+     */
     public Location askLocation() {
         Location location;
         System.out.println("Enter location: ");
@@ -163,6 +176,11 @@ public class AskManager implements IAskManager {
         return location;
     }
 
+    /**
+     * Ask location x long.
+     *
+     * @return the long
+     */
     public Long askLocationX() {
         String strX;
         Long x = null;
@@ -186,6 +204,11 @@ public class AskManager implements IAskManager {
         return x;
     }
 
+    /**
+     * Ask location y double.
+     *
+     * @return the double
+     */
     public double askLocationY() {
         String strY = null;
         double y = 0;
@@ -209,6 +232,11 @@ public class AskManager implements IAskManager {
         return y;
     }
 
+    /**
+     * Ask location name string.
+     *
+     * @return the string
+     */
     public String askLocationName() {
         String name = null;
         try {

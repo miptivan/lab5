@@ -3,6 +3,9 @@ package Data;
 import Exceptions.OverflowXException;
 import Exceptions.OverflowYException;
 
+/**
+ * The type Coordinates.
+ */
 public class Coordinates {
     /**
      * The X.
@@ -37,6 +40,7 @@ public class Coordinates {
      * Sets x coordinate.
      *
      * @param x the x long
+     * @throws OverflowXException the overflow x exception
      */
     public void setX(Long x) throws OverflowXException {
         if (x > 613) throw new OverflowXException();
@@ -56,6 +60,7 @@ public class Coordinates {
      * Sets y.
      *
      * @param y the y Double
+     * @throws OverflowYException the overflow y exception
      */
     public void setY(Integer y) throws OverflowYException {
         if (y > 962) throw new OverflowYException();

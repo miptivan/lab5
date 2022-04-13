@@ -7,6 +7,9 @@ import Data.Person;
 import java.io.IOException;
 import java.util.ArrayDeque;
 
+/**
+ * The type File manager.
+ */
 public class FileManager implements IFileManager{
 
     @Override

@@ -1,5 +1,8 @@
 package Exceptions;
 
+/**
+ * The type Incorrect value exception.
+ */
 public class IncorrectValueException extends Throwable {
     /**
      * Instantiates a new Incorrect value exception.

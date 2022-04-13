@@ -6,10 +6,22 @@ import java.util.LinkedList;
 import java.util.List;
 import java.io.*;
 
+/**
+ * The type Command manager.
+ */
 public class CommandManager implements ICommandManager{
 
     private final CollectionManager manager;
+    /**
+     * The History collection.
+     */
     public LinkedList<String> historyCollection = new LinkedList<>();
+
+    /**
+     * Instantiates a new Command manager.
+     *
+     * @param manager the manager
+     */
     public CommandManager(CollectionManager manager) {
         this.manager = manager;
     }

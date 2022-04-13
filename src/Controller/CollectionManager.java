@@ -8,10 +8,19 @@ import java.util.concurrent.atomic.AtomicInteger;
 import Exceptions.RecursiveCommandException;
 import File.FileManager;
 
+/**
+ * The type Collection manager.
+ */
 public class CollectionManager implements ICollectionManager {
+    /**
+     * The Help commands.
+     */
     HashMap<String, String> helpCommands;
 
     private final java.util.Date creation = new Date();
+    /**
+     * The Person collection.
+     */
     public Deque<Person> personCollection = new ArrayDeque<>();
     private final AskManager askManager = new AskManager();
 
@@ -21,6 +30,11 @@ public class CollectionManager implements ICollectionManager {
         return currID.getAndIncrement();
     }
 
+    /**
+     * Instantiates a new Collection manager.
+     *
+     * @throws IOException the io exception
+     */
     public CollectionManager() throws IOException {
         helpCommands = new HashMap<>();
         helpCommands.put("help:", "Вывести справку по доступным командам");
@@ -49,8 +63,6 @@ public class CollectionManager implements ICollectionManager {
     @Override
     public void help() {
         System.out.println("All commands: ");
-        // Здесь должна быть сортировка
-
         Set<String> strings = helpCommands.keySet();
         for (String i : strings) {
             System.out.println(i + " " + helpCommands.get(i));
